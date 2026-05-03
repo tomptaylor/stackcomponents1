@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aviation Lab - index</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-white p-8">
+    <h1 class="text-2xl font-bold mb-6 text-slate-400">Aviation Component Lab: index</h1>
+    <div id="app-canvas" class="flex flex-wrap gap-6 items-start">
+    <div class='flex-1 min-w-[300px] border border-slate-700 p-4 rounded shadow-xl bg-slate-800/50'><aviation-display></aviation-display></div>
+    <div class='flex-1 min-w-[300px] border border-slate-700 p-4 rounded shadow-xl bg-slate-800/50'><metal-dropdown></metal-dropdown></div>
+    </div>
+    <script type="module">
+    import './components/AviationDisplay.ts';
+    import './components/MetalDropdown.ts';
+    </script>
+</body>
+</html>

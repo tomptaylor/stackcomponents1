@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + Lit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./src/index.css" />
+    <script type="module" src="/src/components/AviationDisplay.ts"></script>
+    <script type="module" src="/src/components/MetalDropDown.ts"></script>
+    <script type="module" src="/src/components/MetalTable.ts"></script>
+    <script type="module" src="/src/components/MetalModal.ts"></script>
+  </head>
+  <body>
+    <!-- MAIN LAYOUT CONTAINER -->
+    <div class="flex flex-col gap-10 m-10 p-10">
+      <my-table
+        columns='["Name", "Type", "Min", "Max", "Gen Type", "Generator", "Constraint" , "Unique", "Not Null"]'
+      ></my-table>
+
+      <div><aviation-display></aviation-display></div>
+
+      <!-- This is your standalone dropdown -->
+      <metal-dropdown colors='["red", "white", "blue"]'></metal-dropdown>
+
+      <button
+        onclick="document.querySelector('my-modal').show()"
+        class="bg-indigo-600 text-white px-4 py-2 rounded-md w-fit"
+      >
+        Open Settings
+      </button>
+    </div>
+
+    <!-- MODAL LIVES AT THE ROOT LEVEL (Outside the flex divs) -->
+    <my-modal>
+      <p class="text-gray-700 font-bold">Modal Settings</p>
+      <div class="mt-4">
+        <!-- This dropdown is now safely inside the modal box -->
+        <metal-dropdown colors='["red", "green", "blue"]'></metal-dropdown>
+      </div>
+    </my-modal>
+  </body>
+</html>
